@@ -28,3 +28,83 @@ Reason : Cleveland, officially the City of Cleveland, is a major city in the U.S
         * Just in case if it rains or you need shelter in sun light or when raining.
     * Mirrored sunglasses
         * Protects eyes and skin from UV rays comes directly from sun.
+
+---
+
+## Table for Food Meanu
+
+| Food | Location | Cost |
+| ---| ---| ---: |
+| Vada Pav | Mumbai | 10Rs/- |
+| Chicken Noodles | Hyderabad | 100Rs/- |
+| Muttoon Biryani | Hyderabad | 500Rs/- |
+| Sambar Vada | Chennai | 100Rs/- |
+
+---
+## Pithy Quotes
+
+> “Many of life’s failures are people who did not realize how close they were to success when they gave up.” <br> By:– *Thomas A. Edison*
+
+
+>  “Never let the fear of striking out keep you from playing the game.”<br> By:– *Babe Ruth*
+
+---
+
+## Code Fencing
+
+Description: 
+> The algorithm first finds the leftmost and rightmost points A and B. In the event multiple such points exist, the lowest among the left (lowest Y-coordinate) is taken as A, and the highest among the right (highest Y-coordinate) is taken as B. Clearly, A and B must both belong to the convex hull as they are the farthest away and they cannot be contained by any line formed by a pair among the given points.<br>
+
+> Now, draw a line through AB. This divides all the other points into two sets, S1 and S2, where S1 contains all the points above the line connecting A and B, and S2 contains all the points below the line joining A and B. The points that lie on the line joining A and B may belong to either set. The points A and B belong to both sets. Now the algorithm constructs the upper set S1 and the lower set S2 and then combines them to obtain the answer.
+
+Here is the link:<https://cp-algorithms.com/geometry/grahams-scan-convex-hull.html>
+
+Here is the code for `Convex Hull construction using Graham's Scan`:
+```
+struct pt {
+    double x, y;
+};
+
+bool cmp(pt a, pt b) {
+    return a.x < b.x || (a.x == b.x && a.y < b.y);
+}
+
+bool cw(pt a, pt b, pt c) {
+    return a.x*(b.y-c.y)+b.x*(c.y-a.y)+c.x*(a.y-b.y) < 0;
+}
+
+bool ccw(pt a, pt b, pt c) {
+    return a.x*(b.y-c.y)+b.x*(c.y-a.y)+c.x*(a.y-b.y) > 0;
+}
+
+void convex_hull(vector<pt>& a) {
+    if (a.size() == 1)
+        return;
+
+    sort(a.begin(), a.end(), &cmp);
+    pt p1 = a[0], p2 = a.back();
+    vector<pt> up, down;
+    up.push_back(p1);
+    down.push_back(p1);
+    for (int i = 1; i < (int)a.size(); i++) {
+        if (i == a.size() - 1 || cw(p1, a[i], p2)) {
+            while (up.size() >= 2 && !cw(up[up.size()-2], up[up.size()-1], a[i]))
+                up.pop_back();
+            up.push_back(a[i]);
+        }
+        if (i == a.size() - 1 || ccw(p1, a[i], p2)) {
+            while(down.size() >= 2 && !ccw(down[down.size()-2], down[down.size()-1], a[i]))
+                down.pop_back();
+            down.push_back(a[i]);
+        }
+    }
+
+    a.clear();
+    for (int i = 0; i < (int)up.size(); i++)
+        a.push_back(up[i]);
+    for (int i = down.size() - 2; i > 0; i--)
+        a.push_back(down[i]);
+}
+
+```
+Here is the link: <https://cp-algorithms.com/geometry/grahams-scan-convex-hull.html>
