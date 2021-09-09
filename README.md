@@ -36,7 +36,7 @@ Reason : Cleveland, officially the City of Cleveland, is a major city in the U.S
 | Food | Location | Cost |
 | ---| ---| ---: |
 | Vada Pav | Mumbai | 10Rs/- |
-| Chicken Noodles | Hyderabad | 100Rs/- |
+| Chicken Noodles | Hyderabad | 200Rs/- |
 | Muttoon Biryani | Hyderabad | 500Rs/- |
 | Sambar Vada | Chennai | 100Rs/- |
 
