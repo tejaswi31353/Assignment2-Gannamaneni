@@ -29,6 +29,10 @@ Reason : Cleveland, officially the City of Cleveland, is a major city in the U.S
     * Mirrored sunglasses
         * Protects eyes and skin from UV rays comes directly from sun.
 
+
+Link to AboutMe: 
+[AboutMe](https://github.com/tejaswi31353/Assignment2-Gannamaneni/blob/main/AboutMe.md)
+
 ---
 
 ## Table for Food Meanu
