@@ -28,3 +28,14 @@ Reason : Cleveland, officially the City of Cleveland, is a major city in the U.S
         * Just in case if it rains or you need shelter in sun light or when raining.
     * Mirrored sunglasses
         * Protects eyes and skin from UV rays comes directly from sun.
+
+---
+
+## Table for Food Meanu
+
+| Food | Location | Cost |
+| ---| ---| ---: |
+| Vada Pav | Mumbai | 10Rs/- |
+| Chicken Noodles | Hyderabad | 100Rs/- |
+| Muttoon Biryani | Hyderabad | 500Rs/- |
+| Sambar Vada | Chennai | 100Rs/- |
